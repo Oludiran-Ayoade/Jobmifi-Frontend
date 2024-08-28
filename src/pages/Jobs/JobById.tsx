@@ -39,7 +39,7 @@ const JobDetail: React.FC = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/jobsbyid/${jobId}`);
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/jobsbyid/${jobId}`);
         const jobData = response.data.job;
         if (jobData) {
           setJob(jobData);
@@ -75,7 +75,7 @@ const JobDetail: React.FC = () => {
     if (!job) return;
 
     try {
-      await axios.post('http://localhost:3000/api/users/application/jobs', {
+      await axios.post('https://jobmifi-backend.onrender.com/api/users/application/jobs', {
         jobId: job._id,
         coverLetter,
         userId

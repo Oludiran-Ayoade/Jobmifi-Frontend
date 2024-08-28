@@ -43,7 +43,7 @@ const JobDetailPage: React.FC = () => {
   useEffect(() => {
     const fetchApplicationDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/applications/user/${userId}`);
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/applications/user/${userId}`);
         
         const fetchedApplications: Application[] = response.data.applications;
         const matchingApplication = fetchedApplications.find(app => app.job._id === jobId);
@@ -64,7 +64,7 @@ const JobDetailPage: React.FC = () => {
 
   const handleWithdrawApplication = async (applicationId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/employer/delete-application/${applicationId}`);
+      await axios.delete(`https://jobmifi-backend.onrender.com/api/users/employer/delete-application/${applicationId}`);
       setApplication(null);
       navigate('/skillers/applications');
     } catch (error) {

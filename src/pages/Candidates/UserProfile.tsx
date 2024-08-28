@@ -29,7 +29,7 @@ const UserProfile: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/users/profilecard/allusers/${id}`)
+    axios.get(`https://jobmifi-backend.onrender.com/api/users/profilecard/allusers/${id}`)
       .then(response => {
         setProfile(response.data);
         // console.log(response.data); 

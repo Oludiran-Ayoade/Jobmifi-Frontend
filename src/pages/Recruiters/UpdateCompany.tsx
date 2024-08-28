@@ -34,7 +34,7 @@ const UpdateCompanyForm: React.FC = () => {
     useEffect(() => {
         const fetchCompany = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/users/getcompanyid/${id}`, {
+                const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getcompanyid/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -120,7 +120,7 @@ const UpdateCompanyForm: React.FC = () => {
                 formData.pictures = await Promise.all(Array.from(data.pictures).map(file => convertToBase64(file)));
             }
 
-            await axios.patch(`http://localhost:3000/api/users/update/companies/${id}`, formData, {
+            await axios.patch(`https://jobmifi-backend.onrender.com/api/users/update/companies/${id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',

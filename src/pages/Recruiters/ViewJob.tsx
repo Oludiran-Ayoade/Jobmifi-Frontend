@@ -42,7 +42,7 @@ const ViewJob: React.FC = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {   
-        const response = await axios.get(`http://localhost:3000/api/users/jobs/${id}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/jobs/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

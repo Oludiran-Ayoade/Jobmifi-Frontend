@@ -17,7 +17,7 @@ const SkillersApplication: React.FC = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {  
-        const response = await axios.get(`http://localhost:3000/api/users/applications/user/${userId}`);
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/applications/user/${userId}`);
         setApplications(response.data.applications);
         
         setLoading(false);
@@ -31,7 +31,7 @@ const SkillersApplication: React.FC = () => {
 
   const handleDeleteApplication = async (applicationId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/employer/delete-application/${applicationId}`);
+      await axios.delete(`https://jobmifi-backend.onrender.com/api/users/employer/delete-application/${applicationId}`);
       setApplications(applications.filter(app => app._id !== applicationId));
     } catch (error) {
       console.error('Error deleting application:', error);

@@ -27,7 +27,7 @@ const ViewCompany: React.FC = () => {
   useEffect(() => {
     const fetchCompany = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/getcompany/${userId}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getcompany/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
               },

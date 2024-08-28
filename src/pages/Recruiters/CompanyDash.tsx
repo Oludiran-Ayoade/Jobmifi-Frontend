@@ -25,7 +25,7 @@ const CompanyDashboard: React.FC = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/with-job-count/${userId}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/with-job-count/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

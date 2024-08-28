@@ -48,7 +48,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ visible, onHide, onSignInVisi
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      const url = isRecruiter ? 'http://localhost:3000/api/users/jobpost' : 'http://localhost:3000/api/users/signup';
+      const url = isRecruiter ? 'https://jobmifi-backend.onrender.com/api/users/jobpost' : 'https://jobmifi-backend.onrender.com/api/users/signup';
       await axios.post(url, values)
         .then((res) => {
           if (res.data.status) {

@@ -30,7 +30,7 @@ const ResetPassword: React.FC<onResetModalProps> = ({ visible, onHide }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/users/reset-password',
+        'https://jobmifi-backend.onrender.com/api/users/reset-password',
         { email, otp, newPassword, confirmNewPassword },
         { headers: { 'Content-Type': 'application/json' } }
       );

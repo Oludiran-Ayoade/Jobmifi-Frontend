@@ -25,7 +25,7 @@ const CompanyList: React.FC = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/getcompany/${userId}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getcompany/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const CompanyList: React.FC = () => {
 
   const handleDelete = async (companyId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/delete/companies/${companyId}`, {
+      await axios.delete(`https://jobmifi-backend.onrender.com/api/users/delete/companies/${companyId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

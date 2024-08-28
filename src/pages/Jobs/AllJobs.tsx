@@ -65,7 +65,7 @@ const JobCategoryComponent: React.FC = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/users/alljobs/jobs');
+        const response = await axios.get('https://jobmifi-backend.onrender.com/api/users/alljobs/jobs');
         // console.log(response)
         const jobsData = response.data.jobs;
         if (Array.isArray(jobsData)) {

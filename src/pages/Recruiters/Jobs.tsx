@@ -40,7 +40,7 @@ const CreateJob: React.FC = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/getcompany/${user?._id}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getcompany/${user?._id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -88,7 +88,7 @@ const CreateJob: React.FC = () => {
     e.preventDefault();
 
     try {
-      await axios.post(`http://localhost:3000/api/users/post/jobs`, {
+      await axios.post(`https://jobmifi-backend.onrender.com/api/users/post/jobs`, {
         ...jobForm,
         companyId: selectedCompanyId,
         userId: user?._id

@@ -29,7 +29,7 @@ const JobList: React.FC = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/getjob/${userId}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getjob/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -48,7 +48,7 @@ const JobList: React.FC = () => {
 
   const handleDelete = async (jobId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/delete/job/${jobId}`, {
+      await axios.delete(`https://jobmifi-backend.onrender.com/api/users/delete/job/${jobId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

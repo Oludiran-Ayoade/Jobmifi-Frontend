@@ -46,7 +46,7 @@ const VerifyOtp: React.FC<VerifyOtpModalProps> = ({ visible, onHide, onOpenForgo
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/users/verify-otp',
+        'https://jobmifi-backend.onrender.com/api/users/verify-otp',
         { email, userOTP: otp },
         {
           headers: {

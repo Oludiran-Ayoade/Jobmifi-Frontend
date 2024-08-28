@@ -47,7 +47,7 @@ const SkillerProfile: React.FC = () => {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/users/${userId}`)
+    axios.get(`https://jobmifi-backend.onrender.com/api/users/${userId}`)
       .then(response => {
         const { user, profile } = response.data;
         setProfile(prevProfile => ({

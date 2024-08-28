@@ -40,7 +40,7 @@ const ChangePassword: React.FC = () => {
 
     const updatedFormData = { ...formData, email: email };
     try {
-      const response = await axios.post('http://localhost:3000/api/users/change-password', updatedFormData, {
+      const response = await axios.post('https://jobmifi-backend.onrender.com/api/users/change-password', updatedFormData, {
         headers: {
           'Content-Type': 'application/json',
         },

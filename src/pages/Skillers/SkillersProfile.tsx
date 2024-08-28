@@ -54,7 +54,7 @@ const SkillersProfile: React.FC = () => {
   const [newExperience, setNewExperience] = useState<Experience>({ id: '', company: '', role: '', duration: '' });
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/users/${userId}`)
+    axios.get(`https://jobmifi-backend.onrender.com/api/users/${userId}`)
       .then(response => {
         const { user, profile } = response.data;
         setProfile(prevProfile => ({
@@ -106,7 +106,7 @@ const SkillersProfile: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    axios.post(`http://localhost:3000/api/users/${userId}`, profile)
+    axios.post(`https://jobmifi-backend.onrender.com/api/users/${userId}`, profile)
       .then(response => {
         console.log(response.data);
         toast.current?.show({ severity: 'info', summary: 'Success', detail: 'Profile updated successfully!' , life: 2000 });

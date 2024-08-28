@@ -30,7 +30,7 @@ const CompanyDetails: React.FC = () => {
   useEffect(() => {
     const fetchCompanyDetails = async () => {
       try {   
-        const response = await axios.get(`http://localhost:3000/api/users/getcompanyid/${id}`);
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getcompanyid/${id}`);
         setCompany(response.data.data);
         setJobs(response.data.jobs)
         console.log(response.data.data);

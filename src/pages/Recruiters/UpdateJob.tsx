@@ -42,7 +42,7 @@ const UpdateJobForm: React.FC = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/getjobId/${id}`, {
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/getjobId/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -83,7 +83,7 @@ const UpdateJobForm: React.FC = () => {
 
     try {
       await axios.patch(
-        `http://localhost:3000/api/users/update/jobs/${id}`,
+        `https://jobmifi-backend.onrender.com/api/users/update/jobs/${id}`,
         {
           ...data,
           qualifications: data.qualifications.map((q) => q.value),

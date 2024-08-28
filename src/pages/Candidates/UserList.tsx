@@ -21,7 +21,7 @@ const UserList: React.FC = () => {
   
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/users/profilecards/allusers')
+    axios.get('https://jobmifi-backend.onrender.com/api/users/profilecards/allusers')
       .then(response => {
         setUsers(response.data.data);
         setLoading(false);

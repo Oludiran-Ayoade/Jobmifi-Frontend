@@ -26,7 +26,7 @@ const CompanySlider: React.FC = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/users/allcompany/companies');
+        const response = await axios.get('https://jobmifi-backend.onrender.com/api/users/allcompany/companies');
         const companiesData = response.data;
 
         // Use a Set to avoid duplicate companies

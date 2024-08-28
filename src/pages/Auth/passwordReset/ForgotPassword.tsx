@@ -24,7 +24,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ visible, onHi
   const [ResetPasswordVisible, setResetPasswordVisible] = useState<boolean>(false);
   const [isForgotPasswordVisible, setIsForgotPasswordVisible] = useState<boolean>(false);
 
-  const url = 'http://localhost:3000/api/users/forgot-password';
+  const url = 'https://jobmifi-backend.onrender.com/api/users/forgot-password';
  
   const sendOTP = async (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     ev.preventDefault();

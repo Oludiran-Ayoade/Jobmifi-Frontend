@@ -23,7 +23,7 @@ const EmployerDashboard: React.FC = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/users/employer/jobs/${userId}`);
+        const response = await axios.get(`https://jobmifi-backend.onrender.com/api/users/employer/jobs/${userId}`);
         console.log(response);
         
         const pendingApplications = response.data.filter((app: any) => app.status === 'pending');
@@ -48,7 +48,7 @@ const EmployerDashboard: React.FC = () => {
 
     try {
       // Update status in the backend
-      await axios.post('http://localhost:3000/api/users/employer/update-status', {
+      await axios.post('https://jobmifi-backend.onrender.com/api/users/employer/update-status', {
         applicationId: application._id,
         status: action === 'accept' ? 'accepted' : 'rejected',
       });
@@ -77,7 +77,7 @@ const EmployerDashboard: React.FC = () => {
   const handleDelete = async (applicationId: string) => {
     try {
       // Delete the application from the backend
-      await axios.delete(`http://localhost:3000/api/users/employer/delete-application/${applicationId}`);
+      await axios.delete(`https://jobmifi-backend.onrender.com/api/users/employer/delete-application/${applicationId}`);
 
       setApplications(applications.filter(app => app._id !== applicationId));
       setAcceptedApplications(acceptedApplications.filter(app => app._id !== applicationId));

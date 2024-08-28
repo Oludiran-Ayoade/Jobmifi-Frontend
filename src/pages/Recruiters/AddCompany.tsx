@@ -77,7 +77,7 @@ const CreateCompanyForm: React.FC = () => {
       formData.logo = await convertToBase64(data.logo[0]);
       formData.pictures = await Promise.all(Array.from(picturesPreview));
 
-      await axios.post('http://localhost:3000/api/users/addcompany', formData);
+      await axios.post('https://jobmifi-backend.onrender.com/api/users/addcompany', formData);
       toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Company created successfully', life: 2000 });
     } catch (error: any) {
       toast.current?.show({ severity: 'error', summary: 'Error', detail: 'Failed to create company', life: 3000 });
